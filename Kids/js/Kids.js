@@ -5,7 +5,19 @@ $('.Signup').hide();
 $("#links").hide();
 $("#hide").hide();
 
+function inputclear()
+{
+  $('#prenom').val('');
+  $('#nom').val('');
+  $('#signup_mail').val('');
+  $('#signup_password').val('');
 
+  $('#email').val('');
+
+
+  $('#login_mail').val('');
+  $('#login_password').val('');
+}
 function login()
 {
   $(".Signin").fadeIn();
@@ -37,6 +49,8 @@ function login()
       $("main").removeClass("noClick");
       $("#header").removeClass("noClick");
       $("footer").removeClass("noClick");
+
+      inputclear();
 
       $(".Signin").unbind('click', clickDocument);
       $(".Signup").unbind('click', clickDocument);
@@ -77,12 +91,16 @@ $(document).ready(function ()
   {
     $(".Signup").hide();
     $(".Signin").fadeIn();
+
+    inputclear();
   });
 
   $(".chevron_mdp").click(function () 
   {
     $(".NewPassword").hide();
     $(".Signin").fadeIn();
+
+    inputclear();
   });
 
   

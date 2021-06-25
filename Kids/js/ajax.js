@@ -1,6 +1,18 @@
 function ajaxAffiche(htmlArticle)
 {
     $('#email_verif').html(htmlArticle);
+
+    if(htmlArticle.charAt(0) == 'L')
+    {
+
+    }
+    else
+    {
+        $('#prenom').val('');
+        $('#nom').val('');
+        $('#signup_mail').val('');
+        $('#signup_password').val('');
+    }
 }
 
 $("form#form_inscription").submit(function(e) 
