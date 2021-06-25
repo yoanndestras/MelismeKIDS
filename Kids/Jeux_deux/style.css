@@ -1,0 +1,510 @@
+body
+{
+    background-image: url(../../Kids/img/nuages.jpg);
+    background-repeat: repeat-x;
+    font-family: 'Gorditas' !important;
+
+    background-color: #EAF9FE !important;
+}
+main
+{
+    width: 70%;
+    margin: 0 auto;
+}
+h1
+{
+    text-align: center;
+    font-size: 6em !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.nowrap
+{
+    white-space:nowrap;
+}
+.lion
+{
+    width: 10%;
+    height: 20%;
+}
+#button 
+{
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 40px;
+
+}
+/*
+h2
+{
+    padding: 20px;
+    text-align: center;
+}
+#sound
+{
+    text-align: center;
+}
+form
+{
+    background-color: white;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+}
+.answer_list
+{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.answer_list div
+{
+    text-align: center;
+    align-self: flex-end;
+    background-color: #73D6FF;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+    cursor: pointer;
+}
+.answer_list div:active
+{
+    -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+          box-shadow: none;
+}
+#verif_button, #next_button, #next_button2, #next_button3, #next_button4
+{
+    text-align: center;
+    padding-bottom: 20px ;
+}
+
+#true, #false, #true2, #false2, #true3, #false3, #true4, #false4
+{
+    text-align: center;
+}
+#restart
+{
+    text-align: center;
+    margin-bottom: 20px;
+
+    
+}
+.test
+{
+    -webkit-box-shadow: 0 8px 6px -6px black !important;
+        -moz-box-shadow: 0 8px 6px -6px black !important;
+          box-shadow: 0 8px 6px -6px black !important;
+}
+*/
+label
+{
+    text-align: center;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 32%, rgba(70,239,252,1) 87%);
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+    cursor: pointer;
+    width: 140px;
+    height: 184px;
+}
+.answers
+{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    color: white;
+}
+.question
+{
+    padding: 20px;
+}
+
+.quiz-container
+{
+    margin-bottom: 50px;
+    
+
+    position: relative;
+    height: 400px;
+    margin-top: 40px;
+}
+.buttons
+{
+    position: absolute;
+    z-index: 2;
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: -80px;
+
+}
+.slide
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+}
+.active-slide
+{
+    opacity: 1;
+    z-index: 2;
+}
+.buttons
+{
+    text-align: center;
+    margin-bottom: 50px;
+}
+input:focus 
+{
+    outline: none !important;
+}
+img
+{
+    width: 140px;
+    height: 160px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+}
+/****************************************************************************************/
+/****************************************FOOTER******************************************/
+/****************************************************************************************/
+footer
+{
+    background-color: #1382C6;
+    color: white;
+}
+footer h3
+{
+    font-weight: lighter;
+    font-size: 200%;
+    margin: 0 auto;
+}
+footer section
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+footer section article
+{
+    text-align: center;
+    width:20%;
+    margin: 2% auto 2%;
+}
+footer section article.FooterMelisme
+{
+    display: flex;
+    flex-direction: column;
+}
+footer section article.Footerenplus
+{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+footer .verifier #toucan4, footer .verifier #toucan3
+{   
+    width: 40%;
+    height: auto;
+}
+footer .verifier
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+footer .FooterMelisme a, footer .Contact a, footer .footersocial a
+{
+    text-decoration: none;
+    padding: 3%;
+    color: white;
+    transition: 0.5s;
+}
+.Footerenplus a:hover
+{
+    font-size: 100%;
+}
+footer section article a:hover
+{
+    font-size: 200%;
+}
+footer section article.Contact
+{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+footer section article div.Footericone
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 110%;
+}
+.Footericone a
+{
+    transition: 0.5s;
+}
+.Footericone a:hover 
+{
+    font-size: 150%;
+}
+footer .footersocial
+{
+    margin-top: 3%;
+}
+footer .social
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 150%;
+}
+footer select
+{
+    background-color: #F7F6F2;
+    width: 75%;
+    padding: 3%;
+    border: 0;
+}
+#globe
+{
+    font-size: 100%;
+    margin-right: 2%;
+}
+footer .social a
+{
+    margin-top: 2%;
+    transition: 0.5s;
+}
+.social a:hover
+{
+    font-size: 150%;
+}
+#show, #hide
+{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#links a
+{
+    text-decoration: none;
+    color: white;
+}
+#show
+{
+    background-color: #4CAF50; /* Green */
+}
+#hide
+{
+    background-color: #4c53af; /* Green */
+}
+
+@media screen and (min-width:300px) and (max-width:1024px)
+{
+
+    h1
+    {
+        font-size: 4em !important;
+        letter-spacing: 0px !important;
+    }
+    
+    .answers label
+    {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .quiz-container
+    {
+       height: 400px;
+    }
+
+    footer section
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    footer section article
+    {
+        text-align: center;
+        width:40%;
+        margin:30px auto 30px;
+    }
+    
+    footer section article.FooterMelisme 
+    {
+        margin-right: 0;
+    }
+
+    footer section article.Contact
+    {
+    
+        border-left : none;
+        border-right: 1px solid white;
+        padding-right: 10%;
+        margin-right: 0px;
+        
+    }
+    
+    footer section article.Footerenplus
+    {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left:0px;
+        padding-left: 10%;
+        border-right: none;
+        border-left: 1px solid white;
+        border-top: none;
+        border-bottom: none;
+    }
+    
+    footer section article.verifier
+    {
+        display:none;
+     }
+    
+    footer .footersocial
+    {
+        padding-left: 10%;
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+}
+@media screen and (max-width:700px)
+{
+    .answers
+    {
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+    .quiz-container
+    {
+       height: 1010px;
+    }
+    #myaudio
+    {
+        width: 100px;
+    }
+    h1
+    {
+        font-size: 2em !important;
+        letter-spacing: 0px !important;
+    }
+}
+ 
+@media screen and (max-width:480px)
+{
+    .quiz-container
+    {
+       height: 1080px;
+    }
+    footer section
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+    
+    footer section article
+    {
+        text-align: center;
+        width:90%;
+        margin:30px auto 30px;
+    }
+    
+    footer .footersocial
+    {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    
+    footer .footersocial .fas
+    {
+       vertical-align: middle;
+        padding-right: 5px;
+        font-size: 30px;
+        
+    }
+    
+    footer .social
+    {
+        font-size: 50px;
+    }
+    
+    footer section article div.Footericone
+    {
+        font-size: 40px;
+    }
+    
+    footer section article.Contact
+    {
+        margin: 0px auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid white;
+        padding-right: 0%;
+    
+    }
+    
+    footer section article.verifier
+    {
+       display:none;
+    }
+    
+    footer section article.Footerenplus
+    {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0px auto;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        padding-left: 0%;
+    }
+    
+    footer section article.FooterMelisme
+    {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,60 @@
+body
+{
+    background-color: #3DB6E5 !important;
+    font-family: 'Gorditas', cursive !important;
+}
+h1
+{
+    text-align: center;
+    color: white !important;
+}
+#logo
+{
+    width: 100px;
+}
+.formulaire
+{
+    background-color: white !important;
+    padding: 20px 10px 60px 10px;
+}
+.center
+{
+    text-align: center !important;
+}
+
+form button
+{
+    background-color: transparent;
+    color: rgb(37, 27, 180);
+    border : solid 1px rgb(37, 27, 180) !important;
+}
+form button:hover
+{
+    transition: 0.5s;
+    background-color: rgb(37, 27, 180);
+    color: white !important;
+    border : solid 1px rgb(255, 255, 255) !important;
+}
+button:active 
+{
+    border-style: outset !important;
+}
+
+.mdp_verification_red
+{
+    text-align: center !important;
+    font-size: 1.5em !important;
+    color: red !important;
+}
+
+.mdp_verification_green
+{
+    text-align: center !important;
+    font-size: 1.5em !important;
+    color: rgb(66, 170, 34) !important;
+}
+
+.block
+{
+    display: block !important;
+}

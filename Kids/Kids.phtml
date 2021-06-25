@@ -1,0 +1,426 @@
+<?php
+
+    session_start();
+
+    $pdo = new PDO('mysql:host=localhost;dbname=melismekids;port=3306', 'root', 'root');
+    $pdo->exec('SET NAMES UTF8');
+
+    //////////////////////////////////////// DONNÉES KID ///////////////////////////////////
+
+    $query = $pdo->prepare
+    (
+        "SELECT * from kids WHERE Email = ?"
+    );
+    $query->execute(array($_SESSION['Email']));
+    $user = $query->fetch();
+
+?>
+
+<!DOCTYPE html>
+<HTML lang="FR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Melisme KID'S</title>
+    <link rel="shortcut icon" href="img/toucan_yoann_avec_aile.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="google-signin-client_id" content="871581780133-91thrrhlo5p5ao7j2flrbrfjgrhlttpv.apps.googleusercontent.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- AOS CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/ef488c0f83.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+    <!-- AOS JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Flexslider -->
+    <link rel="stylesheet" href="Flexslider/flexslider.css" type="text/css">
+    <script src="Flexslider/jquery.flexslider.js"></script>
+    <script>
+        $(window).on('load', function () {
+            $('.flexslider').flexslider(
+                {
+                    directionNav: false,
+                    controlNav: false
+                });
+        });
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/KidsStyle.css">
+</head>
+
+<body>
+    <header>
+
+        <!-- Début formulaire de connexion et d'inscription -->
+
+        <section id="Connect">
+            <article class="Signin">
+                <form method="POST" id="form_connexion">
+                    <h3><img src="../Kids/img/toucan_yoann_sans_aile.png" alt="mascotte toucan" /></h3>
+                    <div class="closeSignin">
+                        <a href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                    <div id='connex_verif'></div>
+                    <label for="login_mail"></label><br/>
+                    <input type="email" placeholder="Adresse mail/Pseudo" name="login_mail" id="login_mail"
+                        title="Par exemple : exemple@gmail.com" required><br />
+                    <label for="login_password"></label><br />
+                    <input type="password" placeholder="Mot de Passe" name="login_password" id="login_password" required><br />
+                    <div class="connectButton">
+                        <button type="submit" name="connexion" id="connexion">Connexion</button><br>
+                        <div class="underline password_lost">
+                            <a href="#"><span>Mot de passe oublié ?</span></a>
+                        </div>
+                    </div>
+                    <div class="inscription">
+                        <p>Pas de compte ? <a href="#"><span class="underline">Créer un compte</span></a></p>
+                    </div>
+                </form>
+            </article>
+
+            <article class="NewPassword">
+                <form method="POST" id="form_mdp">
+                    <h3><img src="../Kids/img/toucan_yoann_sans_aile.png" alt="mascotte toucan" /></h3>
+                    <div class="closeNewPassword">
+                        <a href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                    <div id='mdp_verif'></div>
+                    <div id="loader"></div>
+                    <label for="email"></label><br/>
+                    <input type="email" placeholder="Votre adresse mail" name="email" id="email"
+                        title="Par exemple : exemple@gmail.com" required><br />
+                    
+                    <div class="NewPasswordbutton">
+                        <button type="button" class="chevron_mdp"><i class="fas fa-chevron-left"></i></button>
+                        <button type="submit" name="envoyer" id="envoyer">Envoyer</button><br>
+                    </div>
+                </form>
+            </article>
+    
+            <article class="Signup">
+                <form method="POST" id="form_inscription">
+                    <h3><img src="../Kids/img/toucan_yoann_avec_aile.png" alt="mascotte toucan"/></h3>
+                    <div class="closeSignup">
+                        <a href="#"><i class="fas fa-times"></i></a>
+                    </div>
+                    <div id='email_verif'></div>
+                    <label for="prenom">Prénom </label><br />
+                    <input type="text" name="prenom" id="prenom" required><br />
+                    <label for="nom">Nom</label><br />
+                    <input type="text" name="nom" id="nom" required><br />
+                    <label for="signup_mail">Adresse mail</label><br />
+                    <input type="email" name="signup_mail" id="signup_mail" required><br />
+                    <label for="signup_password">Mot de passe</label><br />
+                    <input pattern=".{5,100}" type="password" name="signup_password" id="signup_password" required><br />
+                    <p class="underline">Le mot de passe doit contenir 5 caractères minimum</p>
+
+                    <div class="connectButton">
+                        <button type="button" class="chevron"><i class="fas fa-chevron-left"></i></button>
+                        <button type="submit" name="inscription" id="inscription">Inscription</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+
+        <!-- Fin formulaire de connexion et d'inscription -->
+
+        <!-- Début header version pc -->
+
+        <section id="header">
+            <div class="logo">
+                <a href="#">
+                    <img id="toucan1" src="../Kids/img/toucan_yoann_sans_aile.png" alt="mascotte toucan" />
+                    <img id="toucan2" src="../Kids/img/toucan_yoann_avec_aile.png" alt="mascotte toucan" />
+                </a>
+                <h1><span id="titleeffect1">Melisme</span> <span id="titleeffect">KID'S <i
+                            class="fas fa-guitar"></i></span>
+                </h1>
+            </div>
+            <div class="connexion">
+                <a id="admin_link" href="admin.phtml"><i class="fas fa-user-shield"></i></a>
+                <form action="../index.html">
+                    <button><i class="fas fa-home"></i><br>Melisme</button>
+                </form>
+                <?php
+                    if (isset($_SESSION['Email'])) 
+                    {
+                        echo '<form action="deconnection.php">
+                                    <button id="logout"><i class="fas fa-sign-out-alt"></i><br>Logout</button>
+                              </form>
+                              <form action="personal_scoring.phtml">
+                                <button><i class="fas fa-book-open"></i><br>'.$user["Prenom"].'</button>
+                              </form>';
+                    }
+                    else
+                    {
+                        echo '<button type="button" id="login"><i class="fas fa-user"></i><br>Login</button>';
+                    }
+                    
+                ?>
+            </div>
+        </section>
+        
+        <!-- Fin header version pc -->
+
+        <!-- Début header version mobile -->
+
+        <section id="responsive_navbar" style="display: none;">
+            <nav class="navbar navbar-light navbar-1 blue">
+                <a class="navbar-brand" href="#"><img style="height: 1.5em;"
+                        src="../Kids/img/toucan_yoann_avec_aile.png" alt="mascotte toucan" />Melisme KID'S </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent15" aria-controls="navbarSupportedContent15"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent15">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../index.html">Melisme <span class="sr-only">(current)</span></a>
+                        </li>
+                        <?php
+                        if (isset($_SESSION['Email'])) 
+                        {
+                            echo '<li class="nav-item">
+                                    <a class="nav-link" href="deconnection.php" onclick="signOut();">Logout</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link">'.$user["Prenom"]." ".'<i class="fas fa-smile"></i></a>
+                                  </li>';
+                        }
+                        else
+                        {   
+                            echo '<li class="nav-item">
+                                    <a class="nav-link" id="hamburger_login" href="#">Login</a>
+                                  </li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+        <!-- Fin header version pc -->
+
+    </header>
+    <main>
+
+        <!-- Début flexslider -->
+
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="img/slide-arc.jpg" alt="slide1" />
+                </li>
+                <li>
+                    <img src="img/ciellune.jpg" alt="slide2" />
+                </li>
+            </ul>
+        </div>
+
+        <!-- Fin flexslider -->
+
+        <!-- Début animaux version pc -->
+
+        <section id="game_list">
+            <article id="game_list_pc">
+                <a class="pc_animals" href="../Kids/Jeux_un/page2.phtml">
+                    <img class="croco1" src="../Kids/img/croco_yoann1.png" alt="crocodile" />
+                    <img class="croco2" src="../Kids/img/croco_yoann2.png" alt="crocodile" />
+                </a>
+                <a class="pc_animals" href="../Kids/Jeux_deux/page3.phtml">
+                    <img class="lion1" src="../Kids/img/lion_yoann1.png" alt="lion" />
+                    <img class="lion2" src="../Kids/img/lion_yoann2.png" alt="lion" />
+                </a>
+                <a class="pc_animals" href="../Kids/Jeux_deux/page4.phtml">
+                    <img class="singe1" src="../Kids/img/lion_yoann1.png" alt="singe" />
+                    <img class="singe2" src="../Kids/img/lion_yoann2.png" alt="singe" />
+                </a>
+            </article>
+
+            <!-- Fin animaux version pc -->
+
+            <!-- Début animaux version mobile avec texte -->
+
+            <article class="main minis jeux">
+                <article id="minijeux1">
+                    <a id="mobile_animals1" class="mobile_animals" href="../Kids/Jeux_un/page2.phtml">
+                        <img class="croco1" src="../Kids/img/croco_yoann1.png" alt="crocodile" />
+                        <img class="croco2" src="../Kids/img/croco_yoann1.png" alt="crocodile" />
+                    </a>
+                    <p>Apprends à faire du piano en utilisant les touches de ton clavier ! <br><br><i
+                            class="fas fa-desktop logo_desktop_solo"></i></p>
+                    <div class="play_button_container">
+                        <input type="button" class="btn btn btn-outline-info play_button"
+                            onClick="parent.location='../Kids/Jeux_un/page2.phtml'" value="Jouer">
+                    </div>
+                </article>
+                <article id="minijeux2">
+                    <a id="mobile_animals2" class="mobile_animals" href="../Kids/Jeux_deux/page3.phtml">
+                        <img class="lion1" src="../Kids/img/lion_yoann1.png" alt="lion" />
+                        <img class="lion2" src="../Kids/img/lion_yoann2.png" alt="lion" />
+                    </a>
+                    <p>Test tes connaissances sur les instruments de musiques avec ce Quiz !<br><br><i
+                            class="fas fa-desktop logo_desktop"></i><i class="fas fa-mobile-alt logo_phone"></i></p>
+                    <div class="play_button_container">
+                        <input type="button" class="btn btn btn-outline-info play_button"
+                            onClick="parent.location='../Kids/Jeux_deux/page3.phtml'" value="Jouer">
+                    </div>
+                </article>
+                <article id="minijeux3">
+                    <a id="mobile_animals3" class="mobile_animals" href="../Kids/Jeux_trois/page4.phtml">
+                        <img class="singe1" src="../Kids/img/lion_yoann1.png" alt="singe" />
+                        <img class="singe2" src="../Kids/img/lion_yoann2.png" alt="singe" />
+                    </a>
+                    <p>Entraîne ta mémoire en t'amusant !<br><br><i class="fas fa-desktop logo_desktop"></i><i
+                            class="fas fa-mobile-alt logo_phone"></i></p>
+                    <div class="play_button_container">
+                        <input type="button" class="btn btn btn-outline-info play_button"
+                            onClick="parent.location='../Kids/Jeux_trois/page4.phtml'" value="Jouer">
+                    </div>
+                </article>
+            </article>
+
+            <!-- Fin animaux version mobile avec texte -->
+
+        </section>
+
+        <!-- Début titre Welcome et animation bird -->
+
+        <section id="big_container">
+            <article class="medium_container">
+                <article class="animation_container">
+                    <div class="bird-container bird-container--one">
+                        <div class="bird bird--one"></div>
+                    </div>
+                    <div class="bird-container bird-container--two">
+                        <div class="bird bird--two"></div>
+                    </div>
+                    <div class="bird-container bird-container--three">
+                        <div class="bird bird--three"></div>
+                    </div>
+                    <div class="bird-container bird-container--four">
+                        <div class="bird bird--four"></div>
+                    </div>
+                    <h2> Welcome <i class="far fa-heart"></i></h2>
+                </article>
+
+                <!-- Fin titre Welcome et animation bird -->
+
+                <!-- Début description du site -->
+
+                <article class="welcome_container">
+                    <article class="welcome">
+                        <div id="fade" data-aos="fade-right" data-aos-duration="3000">
+                            <p><span>Bienvenue sur le site Melisme KID'S ! </span></p>
+                            <p>Joue au piano avec le crocodile ou répond aux questions du lion en cliquant sur eux ou
+                                sur Jouer.</p>
+                            <p>On t'attend sur notre site Melisme si tu veux en apprendre d'avantage.</p>
+                            <p>Sur Melisme tu passeras au niveau supérieur</p>
+                        </div>
+                        <div id="no-fade" style="display: none;">
+                            <p><span>Bienvenue sur le site Melisme KID'S ! </span></p>
+                            <p>Joue au piano avec le crocodile ou répond aux questions du lion en cliquant sur eux ou
+                                sur Jouer.</p>
+                            <p>On t'attend sur notre site Melisme si tu veux en apprendre d'avantage.</p>
+                            <p>Sur Melisme tu passeras au niveau supérieur</p>
+                        </div>
+                    </article>
+                    <article class="Image1" data-aos="fade" data-aos-duration="3000">
+                        <img src="../Kids/img/croco_yoann1.png" alt="crocodile">
+                    </article>
+                </article>
+
+                <!-- Fin description du site -->
+
+            </article>
+        </section>
+    </main>
+    <footer>
+        <section>
+
+            <!-- Début Footer -->
+
+            <article class="FooterMelisme">
+                <h3>Melisme KID'S</h3>
+                <a href="#">Home</a>
+                <a href="#">Jouer</a>
+                <a href="#">About Us</a>
+            </article>
+
+            <article class="Footerenplus">
+                <h3>En plus</h3>
+                <div id="img_src">
+                    <div>
+                        <button id="show">Show Attribution</button>
+                        <button id="hide">Hide Attribution</button>
+                    </div>
+                </div>
+                <div>
+                    <div id="links">
+                        - <a href="https://fr.vecteezy.com/vecteur-libre/music">Music Vecteurs par Vecteezy</a><br>
+                        - <a href="https://fr.vecteezy.com/vecteur-libre/illustration">Illustration Vecteurs par
+                            Vecteezy</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="verifier">
+                <a href="#">
+                    <img id="toucan4" src="../Kids/img/toucan_yoann_blanc_avec_aile.png" alt="mascotte toucan" />
+                </a>
+            </article>
+
+            <article class="Contact">
+                <h3>Contact</h3>
+                <div class="Footericone">
+                    <a href="#"><i class="fas fa-phone-alt"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fas fa-question"></i></a>
+                </div>
+            </article>
+
+            <article class="footersocial">
+                <i id="globe" class="fas fa-globe"></i>
+                <select name="Language">
+                    <option value="Francais">Français</option>
+                    <option value="English">English</option>
+                </select>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square"></i></a>
+                </div>
+            </article>
+
+            <!-- Fin Footer -->
+
+        </section>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/ajax.js"></script>
+    <script src="js/Kids.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script> AOS.init();</script>
+</body>
+
+</html>

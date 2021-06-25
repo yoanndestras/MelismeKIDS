@@ -1,0 +1,99 @@
+<?php
+
+    session_start();
+
+    $pdo = new PDO('mysql:host=localhost;dbname=melismekids;port=3306', 'root', 'root');
+    $pdo->exec('SET NAMES UTF8');
+
+    $query = $pdo->prepare
+    (
+        "SELECT * from kids WHERE Email = ?"
+    );
+    $query->execute(array($_SESSION['Email']));
+    $kids = $query->fetch();
+
+    if($_SESSION['Admin'] ==  $kids['Admin'])
+    {
+
+    //////////////////////////////////////// ADMINISTRATION ///////////////////////////////////
+
+?>
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+     <meta charset="utf-8">
+     <link rel="shortcut icon" href="img/toucan_yoann_avec_aile.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Melisme KID'S</title>
+
+<!-- CSS -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+<!-- BOOTSTRAP -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<!-- JS -->
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Administration<img id="logo" src="img/toucan_yoann_sans_aile.png" alt="mascotte toucan" /></h1>
+                </div>
+                <div class="col-sm-12 center">
+                    <form action="Kids.phtml">
+                        <button type="submit" class="btn">Retourner sur Melisme</button>
+                    </form>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
+
+<?php
+}
+else
+{
+
+}
+?>

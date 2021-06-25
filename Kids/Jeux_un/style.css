@@ -1,0 +1,155 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body 
+{
+  width: 100%;
+  height: 100%;
+  background-image: url(../../Kids/img/nuages.jpg);
+  background-repeat: repeat-x;
+  background-color: #EBFAFF;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: top center;
+
+  margin-bottom: 200px;
+
+  font-family: 'Gorditas';
+}
+
+h1
+{
+  text-align: center;
+  font-size: 6em;
+  
+
+    white-space:nowrap;
+}
+h2
+{
+  text-align: center;
+}
+.schema_un, .schema_trois
+{
+  display: flex;  
+}
+
+.schema_deux, .schema_quatre
+{
+  display: flex;
+}
+
+#black_legend
+{
+  display: flex;
+  width: 100%;
+  text-transform: capitalize;
+}
+#button 
+{
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 40px;
+
+}
+.piano 
+{
+  display: flex;
+}
+
+.key_p
+{
+  text-align: center;
+  text-transform: capitalize;
+}
+.key 
+{
+  height: calc(var(--width) * 4);
+  width: var(--width);
+}
+
+.white 
+{
+  --width: 80px;
+  background-color: white;
+  border: 1px solid #333;
+}
+
+.white.active 
+{
+  background-color: #CCC;
+}
+#text_2
+{
+  display: none;
+}
+.croco
+{
+  width: 10%;
+}
+.black 
+{
+  --width: 40px;
+  background-color: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  z-index: 2;
+}
+
+.black.active 
+{
+  background-color: #333;
+}
+
+@media screen and (max-width:1200px)
+{
+  main section
+  {
+    
+    transform: rotate(90deg);
+  }
+  body
+  {
+    margin-top: 300px;
+
+  }
+  #text
+  {
+    display: none;
+  }
+}
+@media screen and (max-width:1024px)
+{
+  
+  .key_p
+  {
+    display: none;
+  }
+  
+  #black_legend
+  {
+    display: none;
+  }
+  .piano
+  {
+    display: none;
+  }
+  main section
+  {
+    transform: rotate(0deg);
+  }
+  #text_2
+  {
+    display: block;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Melisme KID'S</title>
+	<link rel="shortcut icon" href="../img/toucan_yoann_avec_aile.png">
+
+	<!-- CSS -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/ef488c0f83.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- JS -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+	<main>
+
+		<h1 style="letter-spacing: -10px;">
+
+			<input id="button" onclick="location.href='../Kids.phtml';" type="button" value="Accueil">
+			<span class="nowrap">
+				<span style="color: #D03131;">K</span>
+				<span style="color: #C60001;">i</span>
+				<span style="color: #69A7D0;">D</span>
+				<span style="color: #056CB1;">'</span>
+				<span style="color: #FEE8A2; margin-right: 30px;">S</span>
+			</span>
+
+			<span class="nowrap">
+				<span style="color: #FFC81B;">S</span>
+				<span style="color: #90C796;">I</span>
+				<span style="color: #3C9C45;">M</span>
+				<span style="color: #FF8A9A;">O</span>
+				<span style="color: #ffc1c9;">N</span>
+			</span>
+			<img class="singe" src="../img/lion_yoann2.png" alt="singe" />
+
+		</h1>
+
+		<div id="gameBoard">
+
+			<div id="middleCircle">
+				<h2 id="title"></h2>
+				<p id="p"></p>
+				<h3 id="level"><i class="fas fa-paw"></i><br>Click !<br>Level : 0</h3>
+			</div>
+
+			<div data-note="a" class="notes one white" id="1"></div>
+			<div data-note="b" class="notes two white" id="2"></div>
+			<div data-note="c" class="notes three white" id="3"></div>
+			<div data-note="d" class="notes four white" id="4"></div>
+		</div>
+
+		<div>
+			<p id="descriptif">Reproduis l'enchaînement de notes</p>
+		</div>
+
+		<article class="piano">
+			<audio id="d" src="notes/key04.mp3"></audio>
+			<audio id="c" src="notes/key03.mp3"></audio>
+			<audio id="b" src="notes/key02.mp3"></audio>
+			<audio id="a" src="notes/key01.mp3"></audio>
+		</article>
+
+	</main>
+</body>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</html>

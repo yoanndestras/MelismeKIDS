@@ -1,0 +1,1270 @@
+
+/****************************************************************************************/
+/****************************************BODY******************************************/
+/****************************************************************************************/
+body
+{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #25CCF7;
+    font-family: 'Gorditas', cursive;
+
+}
+.noClick 
+{
+    pointer-events: none;
+}
+.opacity
+{
+    opacity: 0.5;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+.no-opacity
+{
+    opacity: 1 !important;
+    transition-duration: 0.5s;
+
+}
+html
+{
+    scroll-behavior: smooth;
+}
+main
+{
+    width: 100%;
+    margin: 0 auto;
+}
+/****************************************************************************************/
+/****************************************HEADER******************************************/
+/****************************************************************************************/
+#Connect
+{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    z-index: 100;
+    
+    
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 32%, rgba(70,239,252,1) 87%);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: white;
+
+    width: 30%;
+    margin-top: 150px;
+    border-radius: 15px;
+}
+#Connect h3
+{
+    font-size: 1em;
+}
+#Connect button, #Connect a
+{
+    text-decoration: none;
+    color: white;
+}
+.Signin, .Signup, .NewPassword
+{
+    padding-top: 50px;
+    padding-bottom: 30px;
+
+    text-align: center;
+}
+#google
+{
+    text-align: center !important;
+}
+.Signup img, .Signin img, .NewPassword img
+{
+    width: 30%;
+}
+.closeSignin, .closeSignup, .closeNewPassword
+{
+    position: absolute;
+    top: 2%;
+    right: 3%;
+}
+.connectButton button, .NewPasswordbutton button
+{
+    margin: 0 auto;
+    margin-top: 20px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(76, 191, 226);
+    
+    
+    border-radius: 15px;
+    border: none;
+    width: 50%;
+
+    outline: none;
+}
+.connectButton button:hover, .NewPasswordbutton button:hover
+{
+    background-color: rgb(62, 134, 194);
+    transition: 0.3s;
+}
+.connectButton .chevron, .NewPasswordbutton .chevron_mdp
+{
+    width: 10%;
+}
+.inscription
+{
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+.underline
+{
+    text-decoration: underline;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+#Connect .fa-user
+{
+    font-size: 2em;
+}
+.Signup label, .Signup input, .NewPassword input
+{
+    text-align: left;
+    width: 70%;
+    font-size: 0.9em;
+}
+.Signup label
+{
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.Signup p
+{
+    font-size: 0.7em;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+h3
+{
+    font-size: 500%;
+    position: relative;
+    z-index: 3;
+}
+/****************************************************************************************/
+/****************************************TITRE******************************************/
+/****************************************************************************************/
+h1 
+{
+    font-size: 7em;
+    color: #9CE7FF;
+    text-shadow: 
+    0 0.1em 20px rgba(0, 0, 0, 1), 0.05em -0.03em 0 rgba(0, 0, 0, 1),
+    0.05em 0.005em 0 rgba(0, 0, 0, 1), 0 0.08em 0 rgba(0, 0, 0, 1),
+    0.05em 0.08em 0 rgba(0, 0, 0, 1), 0 -0.03em 0 rgba(0, 0, 0, 1),
+    -0.03em -0.03em 0 rgba(0, 0, 0, 1), -0.03em 0.08em 0 rgba(0, 0, 0, 1), -0.03em 0 0 rgba(0, 0, 0, 1);
+}
+#header span 
+{
+    transform: scale(0.9);
+    display: inline-block;
+}
+#header span:first-child 
+{
+    animation: bop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite
+    alternate;
+}
+#header span:last-child 
+{
+    animation: bopB 1s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+    infinite alternate;
+}
+@keyframes bop 
+{
+    0% 
+    {
+        transform: scale(0.9);
+    }
+    50%, 100% 
+    {
+        transform: scale(1);
+    }
+}
+@keyframes bopB 
+{
+    0% 
+    {
+        transform: scale(0.9);
+    }
+    80%, 100% 
+    {
+        transform: scale(1) rotateZ(-3deg);
+    }
+}
+header
+{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index:2;
+}
+#titrebr
+{
+    display: none;
+}
+#header 
+{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+#header .connexion
+{
+    position: absolute;
+    text-align: right;
+    right: 0;
+    width: 30%;
+    margin: 0 auto;
+}
+#header .connexion button
+{
+    padding: 10%;
+    padding-right: 20%;
+    padding-left: 20%;
+    border: none;
+    background-image: url(../img/cloud_button_bg_1.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    font-size: 1.5em;
+    transition: 0.5s;
+    color: white;
+}
+#header .connexion button:focus
+{
+     outline: none;
+}
+#header .connexion button:hover
+{
+    background-image: url(../img/cloud_button_bg.png);
+}
+
+#header .logo 
+{   
+    display: flex;
+    margin-right: 10%;
+    text-align: center;
+}
+#header .logo a
+{
+    display: block;
+    width: 20%;
+}
+#header .logo #toucan1, #header .logo #toucan2
+{   
+    width: 100%;
+    height: auto;
+}
+#header a img:last-child 
+{
+    display: none;  
+}
+#header a:hover img:last-child 
+{
+    display: block;
+
+}
+#header a:hover img:first-child 
+{
+    display: none;  
+}
+#admin_link
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 70px;
+    height: 70px;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,88,253,1) 100%);
+    border-radius: 0 0 0 100%;
+    text-decoration: none;
+    color: white;
+}
+#admin_link .fas
+{
+    font-size: 2em;
+    margin: 5px 5px 0 0;
+}
+.loader 
+{
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+  
+@keyframes spin 
+{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/****************************************************************************************/
+/****************************************SLIDER******************************************/
+/****************************************************************************************/
+.flexslider
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+    background:none;
+	border:none;
+	box-shadow:none;
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+/****************************************************************************************/
+/****************************************MAIN-JEUX***************************************/
+/****************************************************************************************/
+#game_list
+{
+    position: relative;
+    z-index:1; 
+}
+#game_list .main
+{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin: auto;
+    padding: 3%;
+    padding-top: 2%;
+    background-image: url(../img/nuages.jpg);
+    background-size: contain;
+}
+#game_list #game_list_pc
+{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding-left: 14%;
+    padding-right: 14%;
+    background-image: url(../img/rainbow-1.png);
+    background-size: 8%;
+}
+#game_list #game_list_pc .pc_animals
+{
+    padding: 1%;
+    display: block;
+    width: 10%;
+}
+#mobile_animals1, #mobile_animals2, #mobile_animals3
+{
+    display: none !important;
+}
+.jeux
+{
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin: auto;
+    padding: 4%;
+    padding-top: 2%;
+    margin-top: -2.1%;
+}
+#game_list .minis p
+{
+    font-size: 1.4em;
+    padding: 5%;
+    color: white; 
+    text-shadow: 1px 1px rgb(70, 69, 69);
+}
+#big_container
+{
+    margin-top: -2px;
+}
+.play_button_container
+{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.play_button
+{
+    -webkit-box-shadow: 2px 2px 1px -1px rgba(0,0,0,0.83);
+    -moz-box-shadow: 2px 2px 1px -1px rgba(0,0,0,0.83);
+    box-shadow: 2px 2px 1px -1px rgba(0,0,0,0.83);
+}
+#minijeux1, #minijeux2, #minijeux3
+{
+    width: 25%;
+    position: relative;
+}
+.logo_desktop
+{
+    font-size: 2em; 
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.logo_desktop_solo
+{
+    font-size: 2em; 
+    margin-bottom: 20px;
+}
+.logo_phone
+{
+    font-size: 2em; 
+    margin-bottom: 20px;
+}
+#game_list_pc .croco1, #game_list_pc .lion1, #game_list_pc .singe1
+{   
+    width: 100%;
+    height: auto;
+}
+#game_list_pc .croco2, #game_list_pc .lion2, #game_list_pc .singe2
+{   
+    width: 100%;
+    height: auto;
+}
+#game_list_pc a img:last-child 
+{
+    display: none;  
+}
+#game_list_pc a:hover img:last-child 
+{
+    display: block;
+}
+#game_list_pc a:hover img:first-child 
+{
+    display: none;  
+}
+/****************************************************************************************/
+/****************************************MAIN-ABOUT*************************************/
+/****************************************************************************************/
+h2
+{
+    padding-top: 3%;
+    font-size: 500%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 3;
+    text-shadow: 3px 6px black;
+    color: rgb(123, 193, 216);  
+}
+.welcome_container
+{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+    background-image: url(../img/cloudssss.jpg);
+    background-size: contain;
+    background-color: #33C0F5;
+}
+/****************************************************************************************/
+/****************************************BIRDS*******************************************/
+/****************************************************************************************/
+.animation_container 
+{
+    position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	min-height: 20rem;
+	background-size: cover;
+	background-position: center center;
+}
+.bird 
+{
+	background-image: url(../img/bird.png);
+	background-size: auto 100%;
+    color: blue;
+	width: 176px;
+	height: 250px;
+	animation-name: fly-cycle;
+	animation-timing-function: steps(10);
+	animation-iteration-count: infinite;
+}
+.bird--one 
+{
+    animation-duration: 1s;
+    animation-delay: -0.5s;		
+}
+.bird--two 
+{
+    animation-duration: 0.9s;
+    animation-delay: -0.75s;
+}
+.bird--three 
+{
+    animation-duration: 1.25s;
+    animation-delay: -0.25s;
+}
+.bird--four 
+{
+    animation-duration: 1.1s;
+    animation-delay: -0.5s;
+}
+.bird-container 
+{
+	position: absolute;
+	top: 20%;
+	left: -10%;
+	transform: scale(0) translateX(-10vw);
+    animation-name: fly-right-one;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+.bird-container--one 
+{
+    animation-duration: 15s;
+    animation-delay: 0s;
+}
+.bird-container--two 
+{
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+.bird-container--three 
+{
+    animation-duration: 14.6s;
+    animation-delay: 9.5s;
+}
+.bird-container--four 
+{
+    animation-duration: 16s;
+    animation-delay: 10.25s;
+}
+@keyframes fly-cycle 
+{
+	100% 
+	{
+		background-position: -3600px 0;
+	}
+}
+@keyframes fly-right-one 
+{
+	0% 
+	{
+		transform: scale(0.3) translateX(-10vw);
+	}
+	10% 
+	{
+		transform: translateY(2vh) translateX(10vw) scale(0.4);
+	}
+	20% 
+	{
+		transform: translateY(0vh) translateX(30vw) scale(0.5);
+	}
+	30% 
+	{
+		transform: translateY(4vh) translateX(50vw) scale(0.6);
+	}
+	40% 
+	{
+		transform: translateY(2vh) translateX(70vw) scale(0.6);
+	}
+	50% 
+	{
+		transform: translateY(0vh) translateX(90vw) scale(0.6);
+	}
+	60% 
+	{
+		transform: translateY(0vh) translateX(110vw) scale(0.6);
+	}
+	100% 
+	{
+		transform: translateY(0vh) translateX(110vw) scale(0.6);
+	}
+}
+@keyframes fly-right-two 
+{
+	0% 
+	{
+		transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+	}
+	10% 
+	{
+		transform: translateY(0vh) translateX(10vw) scale(0.4);
+	}
+	20% 
+	{
+		transform: translateY(-4vh) translateX(30vw) scale(0.6);
+	}
+	30% 
+	{
+		transform: translateY(1vh) translateX(50vw) scale(0.45);
+	}
+	40% 
+	{
+		transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+	}
+	50% 
+	{
+		transform: translateY(0vh) translateX(90vw) scale(0.45);
+	}
+	51% 
+	{
+		transform: translateY(0vh) translateX(110vw) scale(0.45);
+	}
+	100% 
+	{
+		transform: translateY(0vh) translateX(110vw) scale(0.45);
+	}
+}
+/*******************************************************************************/
+.medium_container
+{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: #EBFAFF;
+}
+.medium_container p
+{
+    position:relative;
+    z-index:3;
+}
+.Image1 
+{
+    width: 20%;
+    height: auto;
+}
+.Image1 img
+{
+    width: 100%;
+    height: auto;
+}
+.welcome
+{
+    width: 40%;
+    margin-right: 0;
+}
+.welcome h3
+{
+   display: none;
+}
+.welcome p
+{
+    font-size: 1.3em;
+}
+.welcome span
+{
+    color: #93ccdf; 
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    font-size: 1.5em;
+}
+/****************************************************************************************/
+/****************************************FOOTER******************************************/
+/****************************************************************************************/
+footer
+{
+    background-color: #1382C6;
+    color: white;
+}
+footer h3
+{
+    font-weight: lighter;
+    font-size: 200%;
+    margin: 0 auto;
+}
+footer section
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+footer section article
+{
+    text-align: center;
+    width:20%;
+    margin: 2% auto 2%;
+}
+footer section article.FooterMelisme
+{
+    display: flex;
+    flex-direction: column;
+}
+footer section article.Footerenplus
+{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+footer .verifier #toucan4, footer .verifier #toucan3
+{   
+    width: 40%;
+    height: auto;
+}
+footer .verifier
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+footer .FooterMelisme a, footer .Contact a, footer .footersocial a
+{
+    text-decoration: none;
+    padding: 3%;
+    color: white;
+    transition: 0.5s;
+}
+.Footerenplus a:hover
+{
+    font-size: 100%;
+}
+footer section article a:hover
+{
+    font-size: 200%;
+}
+footer section article.Contact
+{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+footer section article div.Footericone
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 110%;
+}
+.Footericone a
+{
+    transition: 0.5s;
+}
+.Footericone a:hover 
+{
+    font-size: 150%;
+}
+footer .footersocial
+{
+    margin-top: 3%;
+}
+footer .social
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 150%;
+}
+footer select
+{
+    background-color: #F7F6F2;
+    width: 75%;
+    padding: 3%;
+    border: 0;
+}
+#globe
+{
+    font-size: 100%;
+    margin-right: 2%;
+}
+footer .social a
+{
+    margin-top: 2%;
+    transition: 0.5s;
+}
+.social a:hover
+{
+    font-size: 150%;
+}
+#show, #hide
+{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#links a
+{
+    text-decoration: none;
+    color: white;
+}
+#show
+{
+    background-color: #4CAF50; /* Green */
+}
+#hide
+{
+    background-color: #4c53af; /* Green */
+}
+/****************************************************************************************/
+/****************************************TABLETTE****************************************/
+/****************************************************************************************/
+@media screen and (max-width:1500px)
+{
+    .welcome
+    {
+        width: 100%;
+    }
+    .Image1
+    {
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width:300px) and (max-width:1024px)
+{
+    #header .logo h1
+    {
+        font-size: 4em;
+    }
+    #header 
+    {
+        justify-content: left;
+    }
+    .logo
+    {
+        flex-direction: column;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    .Image1 img
+    {
+        display: none;
+    }
+    #game_list_pc 
+    {
+        display: none !important;
+    }
+    .jeux .croco1, .jeux .lion1, .jeux .singe1
+    {   
+        width: 100%;
+        height: auto;
+    }
+    .jeux .croco2, .jeux .lion2, .jeux .singe2
+    {   
+        width: 100%;
+        height: auto;
+    }
+    #mobile_animals1, #mobile_animals2, #mobile_animals3
+    {
+        display: block !important;
+        margin: 0 auto;
+        width: 40% !important;
+    } 
+    #game_list .minis
+    {   
+        background-size: auto 100%;
+        padding-top: 2%;
+    }
+    .Image1 
+    {
+        width: 100%;
+        height: auto;
+    }
+    .jeux a img:last-child 
+    {
+        display: none;  
+    }
+    .jeux a:hover img:last-child 
+    {
+        display: block;
+    }
+    .jeux a:hover img:first-child 
+    {
+        display: none;  
+    }
+    .minis
+    {
+        margin-top: 27%;
+        padding-bottom: 0;
+    }
+    .jeux
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 0;
+    }
+    #minijeux1, #minijeux2, #minijeux3
+    {
+        width: 30%;
+        margin-bottom: 10%;
+        border-radius: 50%;
+        padding: 20px;
+        position: relative;
+    }
+    #game_list .minis p
+    {
+        padding-bottom: 80px;
+    }
+    #minijeux1
+    {
+        background-color: #ED672A !important;
+    }
+    #minijeux2
+    {
+        background-color: #78CAE0 !important;
+    }
+    #minijeux3
+    {
+        background-color: #FFC81B !important;
+    }
+    #no-fade
+    {
+        display: block !important;
+    }
+    #fade
+    {
+        display: none;
+    }
+    .welcome
+    {
+        width: 100%;
+    }
+    .welcome p
+    {
+        font-size: 1em;
+        letter-spacing: 1.5px;
+    }
+    .welcome span
+    {
+        letter-spacing: 1.5px;
+    }
+    .welcome_container
+    {
+        flex-direction: column;
+        padding-top: 0;
+        background-size: cover;
+        margin-top: 0;
+    }
+    .medium_container::after
+    {
+        display: none;
+    }
+    .medium_container
+    {
+        box-shadow:none;
+    }
+    .medium_container:before
+    {
+        display: none;
+    }
+    .jeux
+    {
+        background-color: transparent;
+    }
+    .play_button
+    {
+        margin-bottom: 20px;
+        font-size: 150%;
+    }
+    #testbouton
+    {
+        -webkit-box-shadow: 0 8px 6px -6px black !important;
+        -moz-box-shadow: 0 8px 6px -6px black !important;
+        box-shadow: 0 8px 6px -6px black !important;
+    }
+    .rotate:hover
+    {
+        animation: none;
+    }
+    .jeux:hover
+    {
+        background-color: transparent;
+    }
+    .navbar .navbar-1 .navbar-toggler-icon 
+    {
+        background-image: url('https://mdbcdn.b-cdn.net/img/svg/hamburger2.svg?color=fff');
+    }
+    #minijeux1, #minijeux2, #minijeux3
+    {
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px !important;
+        -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black;
+    }
+    #Connect
+    {
+        width: 50%;
+    }
+    .logo h1
+    {
+        display: none;
+    }
+    .logo a
+    {
+        width: 60% !important;
+    }
+    .flexslider
+    {
+        display: none;
+    }
+    #header
+    {
+        display: none;
+    }
+    header
+    {
+        position: relative; 
+    }
+    footer section
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    footer section article
+    {
+        text-align: center;
+        width:40%;
+        margin:30px auto 30px;
+    }
+    footer section article.FooterMelisme 
+    {
+        margin-right: 0;
+    }
+    footer section article.Contact
+    {
+        border-left : none;
+        border-right: 1px solid white;
+        padding-right: 10%;
+        margin-right: 0;
+    }
+    footer section article.Footerenplus
+    {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left:0;
+        padding-left: 10%;
+        border-right: none;
+        border-left: 1px solid white;
+        border-top: none;
+        border-bottom: none;
+    }
+    footer section article.verifier
+    {
+        display:none;
+    }
+    footer .footersocial
+    {
+        padding-left: 10%;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+    #responsive_navbar
+    {
+        display: block !important;
+        position:  relative !important;
+    }
+}
+@media screen and (max-width:780px)
+{
+    .jeux
+    {
+        flex-direction: column !important;
+        
+    }
+    #minijeux1, #minijeux2, #minijeux3
+    {
+        width: 100%;
+        margin-bottom: 10%;
+        border-radius: 50%;
+        padding: 20px;
+    }
+}
+/****************************************************************************************/
+/****************************************TELEPHONE*************************************/
+/****************************************************************************************/
+@media screen and (max-width:600px)
+{
+    #Connect
+    {
+        width: 60%;
+    }
+}
+@media screen and (max-width:480px)
+{
+    #Connect
+    {
+        width: 90%;
+    }
+    #header .logo h1
+    {
+        font-size: 4em;
+    }
+    h2
+    {
+        font-size: 400%;
+    }
+    .logo
+    {
+        flex-direction: column;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    #game_list_pc 
+    {
+        display: none !important;
+    }
+    .jeux .croco1, .jeux .lion1, .jeux .singe1
+    {   
+        width: 100%;
+        height: auto;
+    }
+    .jeux .croco2, .jeux .lion2, .jeux .singe2
+    {   
+        width: 100%;
+        height: auto;
+    }
+    .mobile_animals
+    {
+        display: block !important ;
+        margin: 0 auto;
+        width: 20% !important;
+    } 
+    #game_list .minis
+    {   
+        background-size: auto 100%;
+        background-repeat: no-repeat; 
+        padding-top: 2%;
+    }
+    .Image1 
+    {
+        width: 100%;
+        height: auto;
+    }
+    .jeux a img:last-child 
+    {
+        display: none;  
+    }
+    .jeux a:hover img:last-child 
+    {
+        display: block;
+
+    }
+    .jeux a:hover img:first-child 
+    {
+        display: none;  
+    }
+    .minis
+    {
+        margin-top: 27%;
+    }
+    .jeux
+    {
+        flex-flow: column;
+    }
+    #minijeux1, #minijeux2, #minijeux3
+    {
+        width: 100%;
+        margin-bottom: 10%;
+        border-radius: 50%;
+        padding: 20px;
+    }
+    .welcome
+    {
+        width: 100%;
+    }
+    .mobile_animals
+    {
+        width: 40% !important;
+    }
+    footer section
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+    footer section article
+    {
+        text-align: center;
+        width:90%;
+        margin:30px auto 30px;
+    }
+    footer .footersocial
+    {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    footer .footersocial .fas
+    {
+       vertical-align: middle;
+        padding-right: 5px;
+        font-size: 30px;
+    }
+    footer .social
+    {
+        font-size: 50px;
+    }
+    footer section article div.Footericone
+    {
+        font-size: 40px;
+    }
+    footer section article.Contact
+    {
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid white;
+        padding-right: 0;
+    }
+    footer section article.verifier
+    {
+       display:none;
+    }
+    footer section article.Footerenplus
+    {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0 auto;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        padding-left: 0;
+    }
+    footer section article.FooterMelisme
+    {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:400px)
+{
+    h2
+    {
+        font-size: 300%;
+    }
+    footer .fas, footer .fab
+    {
+        font-size: 10px;
+    }
+}
