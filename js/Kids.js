@@ -156,6 +156,7 @@ $(document).ready(function ()
 
   let crocodataArray = new Array();
   let liondataArray = new Array();
+  let singedataArray = new Array();
 
   crocodataArray[0] = "../Kids/img/croco_yoann1.png";
   crocodataArray[1] = "../Kids/img/croco_yoann2.png";
@@ -164,13 +165,16 @@ $(document).ready(function ()
   liondataArray[0] = "../Kids/img/lion_yoann1.png";
   liondataArray[1] = "../Kids/img/lion_yoann2.png";
 
+  singedataArray[0] = "../Kids/img/singe_1.png";
+  singedataArray[1] = "../Kids/img/singe_2.png";
+
   let thisId = 0;
 
   window.setInterval(function () 
   {
     $('.croco1').attr('src', crocodataArray[thisId]);
     $('.lion1').attr('src', liondataArray[thisId]);
-    $('.singe1').attr('src', liondataArray[thisId]);
+    $('.singe1').attr('src', singedataArray[thisId]);
     thisId++;
     if (thisId == 3) thisId = 0;
   }, 300);
